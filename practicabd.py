@@ -24,6 +24,19 @@ if conexion.is_connected():
     st.dataframe(df_productos)
     fig_producto=px.bar(df_productos, x="nombre", y="costo", title="Productos vs costo")
     st.plotly_chart(fig_producto)
+    st.title("COMANDOS BÁSICOS")
+    st.dataframe(df.head())
+    st.dataframe(df.tail())
+    print(df.info())
+    st.write("Información del DataFrame: ", df.info())
+    st.write("Número de filas y columnas: ", df.shape)
+    st.write("Nombres de columnas: ", df.columns)
+    st.dataframe(df.describe())
+    st.write("valores nullos: ", df.isnull().sum())
+    st.write("Tipos de datos de las columnas: ", df.dtypes)
+    st.write("Valores duplicados clientes: ", df.duplicated().sum())
+    st.write("Valores duplicados productos: ", df_productos.duplicated().sum())
+
 else:
     st.error("Error en la conexión")
 

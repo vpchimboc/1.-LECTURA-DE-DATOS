@@ -35,3 +35,4 @@ fig_ciudad=px.bar(df_clientes_ciudad, x="localidad", y="cantidad", title="Númer
 st.plotly_chart(fig_ciudad)
 
 
+
